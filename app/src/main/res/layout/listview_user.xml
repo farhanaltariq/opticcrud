@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/usertitle"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Username  "
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins"/>
+        <TextView
+            android:id="@+id/username"
+            android:fontFamily="@font/poppins"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@+id/usertitle"/>
+        <TextView
+            android:id="@+id/nametitle"
+            android:layout_below="@+id/usertitle"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:text="Name"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_below="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/nametitle"/>
+        <TextView
+            android:id="@+id/leveltitle"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:text="Level"
+            android:layout_below="@+id/nametitle"/>
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/leveltitle"
+            android:layout_below="@+id/name"/>
+    </RelativeLayout>
+</LinearLayout>

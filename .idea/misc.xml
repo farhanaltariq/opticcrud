@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout-v28/login.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/add_order.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/add_product.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/admin_view.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/edit_order.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/edit_product.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/listview_layout.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/listview_order.xml" value="0.3484375" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/listview_product.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/listview_user.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/login.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/mng_order.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/mng_product.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/mng_user.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/row.xml" value="0.33" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/signup.xml" value="0.2803442028985507" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/user_order.xml" value="0.3625" />
+        <entry key="..\:/APP_PROJECT/opticcrud/app/src/main/res/layout/user_view.xml" value="0.3484375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

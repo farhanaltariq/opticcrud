@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="50dp"
+    android:paddingTop="40dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Admininstrator"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:fontFamily="@font/poppins"
+        android:layout_marginBottom="40dp"/>
+    <Button
+        android:id="@+id/manageOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Orders"/>
+    <Button
+        android:id="@+id/manageProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Product"/>
+    <Button
+        android:id="@+id/manageUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="See Users"/>
+</LinearLayout>

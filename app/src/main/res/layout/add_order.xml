@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.AddOrder"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/txt_cap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Order Item"
+        android:textAlignment="center"
+        android:textSize="19sp"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Name"
+        android:textAlignment="viewEnd"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Model"
+        android:textSize="21sp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Price"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="148dp"
+        android:layout_marginBottom="40dp"/>
+
+    <EditText
+        android:hint="Minus (Left)"
+        android:id="@+id/minus_left"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <EditText
+        android:hint="Minus (Right)"
+        android:id="@+id/minus_right"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="339dp" />
+
+    <EditText
+        android:hint="Cylinder"
+        android:id="@+id/cylinder"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <EditText
+        android:hint="Qty"
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="460dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="535dp" />
+</LinearLayout>

@@ -53,22 +53,13 @@ public class EditOrder extends Activity {
         String cyl = cylinder.getText().toString();
         String qty = quantity.getText().toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, response -> {
+            Log.d("RES", response);
+            Toast.makeText(EditOrder.this, "Data updated", Toast.LENGTH_SHORT).show();
+            finish();
+        }, error -> Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show()){
             @Override
-            public void onResponse(String response) {
-                Log.d("RES", response);
-                Toast.makeText(EditOrder.this, "Data updated", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
 
                 params.put("id", id);

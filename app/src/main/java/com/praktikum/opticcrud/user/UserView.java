@@ -1,14 +1,10 @@
 package com.praktikum.opticcrud.user;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +15,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.praktikum.opticcrud.R;
+import com.praktikum.opticcrud.utils.Url;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,7 +50,7 @@ public class UserView extends AppCompatActivity {
             startActivity(viewOrder);
         });
 
-        String url = "http://192.168.1.5:4443/code/API_Mobile/optik/products/getData.php";
+        String url = Url.getProduct;
         // TODO: Handle error
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
             try{
@@ -74,25 +71,19 @@ public class UserView extends AppCompatActivity {
 
                     ListAdapter adapter = new SimpleAdapter(getApplicationContext(), arrayList, R.layout.listview_product, new String[]{"model", "price"}, new int[]{R.id.model, R.id.price});
                     lv.setAdapter(adapter);
-                    lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(UserView.this);
-                            builder.setMessage("Buy this item ? ").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent addOrder = new Intent(UserView.this, AddOrder.class);
-                                    addOrder.putExtra("id", arrayList.get(position).get("id"));
-                                    addOrder.putExtra("name", username);
-                                    addOrder.putExtra("model", arrayList.get(position).get("model"));
-                                    addOrder.putExtra("price", arrayList.get(position).get("price"));
+                    lv.setOnItemClickListener((parent, view, position, id1) -> {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(UserView.this);
+                        builder.setMessage("Buy this item ? ").setPositiveButton("Yes", (dialogInterface, i1) -> {
+                            Intent addOrder = new Intent(UserView.this, AddOrder.class);
+                            addOrder.putExtra("id", arrayList.get(position).get("id"));
+                            addOrder.putExtra("name", username);
+                            addOrder.putExtra("model", arrayList.get(position).get("model"));
+                            addOrder.putExtra("price", arrayList.get(position).get("price"));
 
-                                    startActivity(addOrder);
-                                }
-                            }).setNegativeButton("No", null);
-                            AlertDialog alert = builder.create();
-                            alert.show();
-                        }
+                            startActivity(addOrder);
+                        }).setNegativeButton("No", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
                     });
 
                 }

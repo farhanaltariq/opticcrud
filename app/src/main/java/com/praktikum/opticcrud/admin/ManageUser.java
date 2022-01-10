@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -55,10 +54,6 @@ public class ManageUser extends Activity {
 
                     ListAdapter adapter = new SimpleAdapter(getApplicationContext(), arrayList, R.layout.listview_user, new String[]{"username", "name", "level"}, new int[]{R.id.usertitle, R.id.name, R.id.level});
                     lv.setAdapter(adapter);
-                    lv.setOnItemClickListener((parent, view, position, id) -> {
-                        String selectedItem =  arrayList.get(position).get("username");
-                        Toast.makeText(getApplicationContext(), selectedItem, Toast.LENGTH_SHORT).show();
-                    });
                 }
             } catch (JSONException e){
                 e.printStackTrace();

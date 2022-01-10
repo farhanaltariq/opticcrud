@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Username dan password harus diisi", Toast.LENGTH_SHORT).show();
             } else {
                 URL = "http://192.168.1.5:4443/code/API_Mobile/optik/login/getData.php?username=" + uname + "&password=" + password;
-//                Log.d("res", URL);
                 login();
             }
         });
@@ -79,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(userView);
                     }
             } catch (JSONException e){
-//                Log.e("res", "Error disini");
-//                e.printStackTrace();
+                e.printStackTrace();
                 Toast.makeText(MainActivity.this, "Username atau password salah", Toast.LENGTH_SHORT).show();
             }
         }, Throwable::printStackTrace);

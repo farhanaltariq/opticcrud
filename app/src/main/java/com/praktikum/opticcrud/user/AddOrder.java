@@ -63,7 +63,7 @@ public class AddOrder extends AppCompatActivity {
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, response -> {
-            Log.d("Params", response);
+
         }, Throwable::printStackTrace)
         {
             @Override

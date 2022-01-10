@@ -3,7 +3,6 @@ package com.praktikum.opticcrud.user;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -11,17 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.praktikum.opticcrud.R;
-import com.praktikum.opticcrud.admin.EditProduct;
-import com.praktikum.opticcrud.admin.ManageProduct;
 import com.praktikum.opticcrud.utils.Url;
 
 import org.json.JSONArray;
@@ -47,8 +41,8 @@ public class ViewOrder extends Activity {
         lv = findViewById(R.id.listview);
         mqueue = Volley.newRequestQueue(this);
 
+        String url = Url.getOrder + "?username=" +username;
 
-        String url = "http://192.168.1.5:4443/code/API_Mobile/optik/orders/getData.php?username=" + username;
 
         // TODO: Handle error
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
@@ -109,7 +103,6 @@ public class ViewOrder extends Activity {
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     });
-
                 }
             } catch (JSONException e){
                 e.printStackTrace();
@@ -127,21 +120,12 @@ public class ViewOrder extends Activity {
 
     private void cancelOrder(String id){
         String url = Url.deleteOrder;
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, response -> {
+            Toast.makeText(ViewOrder.this, "Order Canceled", Toast.LENGTH_SHORT).show();
+            finish();
+        }, error -> Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show()){
             @Override
-            public void onResponse(String response) {
-                Toast.makeText(ViewOrder.this, "Order Canceled", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("id", id);
                 return params;

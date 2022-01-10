@@ -11,6 +11,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.praktikum.opticcrud.R;
+import com.praktikum.opticcrud.utils.Url;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class SignUp extends Activity {
     EditText usernameField, nameField, passwordField, repasswordField;
     Button signup, reset;
     String username, password, name, repassword;
-    String url = "http://192.168.1.5:4443/code/API_Mobile/optik/login/addData.php";
+    String url = Url.getUser;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -27,7 +27,7 @@ public class EditProduct extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_product);
+        setContentView(R.layout.edit_product);
         Intent getData = getIntent();
         id      = getData.getStringExtra("id");
         editData = findViewById(R.id.button);
@@ -41,21 +41,12 @@ public class EditProduct extends Activity {
         String modl = model.getText().toString();
         String prc = price.getText().toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, response -> {
+            Toast.makeText(EditProduct.this, "Data updated", Toast.LENGTH_SHORT).show();
+            finish();
+        }, error -> Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show()){
             @Override
-            public void onResponse(String response) {
-                Toast.makeText(EditProduct.this, "Data updated", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
 
                 params.put("id", id);
